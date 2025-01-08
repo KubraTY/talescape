@@ -4,7 +4,7 @@ import { useLocalSearchParams, useRouter  } from 'expo-router';
 
 const StoryScreen = () => {
   const params = useLocalSearchParams();
-  const { id } = params; // Get the 'id' query parameter.
+  const { id } = params;
   const router = useRouter();
 
   return (
