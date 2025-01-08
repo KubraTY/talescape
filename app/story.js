@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { useSearchParams } from 'expo-router';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { useLocalSearchParams, useRouter  } from 'expo-router';
 
 const StoryScreen = () => {
-  const { id } = useSearchParams();
+  const params = useLocalSearchParams();
+  const { id } = params; // Get the 'id' query parameter.
+  const router = useRouter();
 
   return (
     <View style={styles.container}>
+        <Button title="Go Back" onPress={() => router.back()} /> 
       <Text style={styles.title}>Story ID: {id}</Text>
       <Text style={styles.content}>This is the content of story {id}.</Text>
     </View>
